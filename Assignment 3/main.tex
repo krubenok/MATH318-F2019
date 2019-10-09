@@ -4,6 +4,27 @@
 \usepackage{graphicx}
 \usepackage{color}
 
+\title{MATH 318, Assignment 3}
+\author{Kyle Rubenok, 260667187}
+\date{October 2019}
+
+\begin{document}
+
+\maketitle
+
+\begin{enumerate}
+    \item 
+    \begin{enumerate}
+        \item
+            \begin{tabular}{ c  c | c  c  c  c  c  c }
+            p & q & ( & $\sim$ & p & $\rightarrow$ & q & )\\
+            \hline 
+            $\top$ & $\top$ &  & $\perp$ & $\top$ & \textcolor{red}{$\top$} & $\top$ & \\
+            $\top$ & $\perp$ &  & $\perp$ & $\top$ & \textcolor{red}{$\top$} & $\perp$ & \\
+            $\perp$ & $\top$ &  & $\top$ & $\perp$ & \textcolor{red}{$\top$} & $\top$ & \\
+            $\perp$ & $\perp$ &  & $\top$ & $\perp$ & \textcolor{red}{$\perp$} & $\perp$ & \\
+            \end{tabular}
+        \item
             \begin{tabular}{@{ }c@{ }@{ }c | c@{ }@{}c@{}@{ }c@{ }@{ }c@{ }@{ }c@{ }@{}c@{}@{ }c@{ }@{ }c@{ }@{ }c@{ }@{ }c} p & q &  & ( & p & $\&$ & q & ) & $\lor$ & $\sim$ & p & \\
             \hline 
             $\top$ & $\top$ &  &  & $\top$ & $\top$ & $\top$ &  & \textcolor{red}{$\top$} & $\bot$ & $\top$ & \\
