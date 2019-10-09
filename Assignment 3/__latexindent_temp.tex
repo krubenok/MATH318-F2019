@@ -17,7 +17,7 @@
             \begin{enumerate}
                 \item
                     \begin{tabular}{ c  c | c  c  c  c  c  c }
-                    p & q & ( & $\neg$ & p & $\rightarrow$ & q & )\\
+                    p & q & ( & $\sim$ & p & $\rightarrow$ & q & )\\
                     \hline 
                     $\top$ & $\top$ &  & $\perp$ & $\top$ & \textcolor{red}{$\top$} & $\top$ & \\
                     $\top$ & $\perp$ &  & $\perp$ & $\top$ & \textcolor{red}{$\top$} & $\perp$ & \\
@@ -25,7 +25,7 @@
                     $\perp$ & $\perp$ &  & $\top$ & $\perp$ & \textcolor{red}{$\perp$} & $\perp$ & \\
                     \end{tabular}
                 \item
-                    \begin{tabular}{@{ }c@{ }@{ }c | c@{ }@{}c@{}@{ }c@{ }@{ }c@{ }@{ }c@{ }@{}c@{}@{ }c@{ }    @{ }c@{ }@{ }c@{ }@{ }c} p & q &  & ( & p & $\land$ & q & ) & $\lor$ & $\neg$ & p & \\
+                    \begin{tabular}{@{ }c@{ }@{ }c | c@{ }@{}c@{}@{ }c@{ }@{ }c@{ }@{ }c@{ }@{}c@{}@{ }c@{ }    @{ }c@{ }@{ }c@{ }@{ }c} p & q &  & ( & p & $\&$ & q & ) & $\lor$ & $\sim$ & p & \\
                     \hline 
                     $\top$ & $\top$ &  &  & $\top$ & $\top$ & $\top$ &  & \textcolor{red}{$\top$} & $\bot$ &     $\top$ & \\
                     $\top$ & $\bot$ &  &  & $\top$ & $\bot$ & $\bot$ &  & \textcolor{red}{$\bot$} & $\bot$ &     $\top$ & \\
@@ -34,7 +34,7 @@
                     \end{tabular}
                 \item
                     \begin{tabular}{@{ }c@{ }@{ }c | c@{ }@{ }c@{ }@{ }c@{ }@{}c@{}@{ }c@{ }@{ }c@{ }@{ }c@ { }@{ }c@{ }@{}c@{}@{ }c}
-                    p & q &  & p & $\rightarrow$ & ( & $\neg$ & p & $\rightarrow$ & q & ) & \\
+                    p & q &  & p & $\rightarrow$ & ( & $\sim$ & p & $\rightarrow$ & q & ) & \\
                     \hline 
                     $\top$ & $\top$ &  & $\top$ & \textcolor{red}{$\top$} &  & $\bot$ & $\top$ & $\top$ &   $\top$ &  & \\
                     $\top$ & $\bot$ &  & $\top$ & \textcolor{red}{$\top$} &  & $\bot$ & $\top$ & $\top$ &   $\bot$ &  & \\
@@ -43,7 +43,7 @@
                     \end{tabular}
                 \item
                     \begin{tabular}{@{ }c@{ }@{ }c | c@{ }@{ }c@{ }@{ }c@{ }@{}c@{}@{ }c@{ }@{ }c@{ }@{}c@{}    @{ }c@{ }@{ }c@{ }@{}c@{}@{ }c@{ }@{ }c@{ }@{ }c@{ }@{}c@{}@{}c@{}@{}c@{}@{ }c}
-                    p & q &  & q & $\lor$ & ( & p & $\rightarrow$ & ( & q & $\land$ & ( & p & $\rightarrow$ &  q & ) & ) & ) & \\
+                    p & q &  & q & $\lor$ & ( & p & $\rightarrow$ & ( & q & $\&$ & ( & p & $\rightarrow$ &  q & ) & ) & ) & \\
                     \hline 
                     $\top$ & $\top$ &  & $\top$ & \textcolor{red}{$\top$} &  & $\top$ & $\top$ &  & $\top$ &     $\top$ &  & $\top$ & $\top$ & $\top$ &  &  &  & \\
                     $\top$ & $\bot$ &  & $\bot$ & \textcolor{red}{$\bot$} &  & $\top$ & $\bot$ &  & $\bot$ &     $\bot$ &  & $\top$ & $\bot$ & $\bot$ &  &  &  & \\
@@ -55,11 +55,11 @@
         \item 
             \begin{enumerate}
                 \item 
-                    $\neg p \lor q$ 
+                    $\neg p \vee q$ 
                     \newline 
                     \includegraphics{2a.png}
                 \item 
-                    $p \lor q$ 
+                    $p \vee q$ 
                     \newline 
                     \includegraphics{2b.png}
             \end{enumerate}
