@@ -10,4 +10,4 @@ jobs:
         uses: xu-cheng/latex-action@master
         with:
           root_file: "Assignment 3/Assignment 3.tex"
-          extra_packages: "karnaugh-map enumitem xstring xparse pgf"
+          extra_packages: "karnaugh-map enumitem xstring"
