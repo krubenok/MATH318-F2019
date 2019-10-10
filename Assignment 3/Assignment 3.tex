@@ -123,6 +123,7 @@
             \end{karnaugh-map}
             \newline
             Giving the following: $f = \neg r \lor (\neg p \land \neg q)\lor (p\land \neg q)$
+        \item The set $\{\lor , \land \}$ is not functionally complete. We can prove this by showing it is not 1-complete. Take the $\neg$ operator. Regardless of what input we give to any combination of $\{\lor , \land \}$, ${T \land T \leftrightarrow T}$ and ${F \land F \leftrightarrow F}$. There is no way to invert the input and achieve equivalence to $\neg$
         \item Take for example the formula $p \lor \neg p$. If we attempt to replicate this with the set $\{\oplus\}$. Considering the operations available, it's clear that outside of the identity function of $p = T$ any formulas constructed with combinations of $p$ and $\oplus$ such as $p \oplus p$ and so on will be logically false. This makes replicating the formula $p \lor \neg p$ and many others impossible. Thus $\{\oplus\}$ is not functionally complete. 
     \end{enumerate}
 \end{document}
