@@ -3,6 +3,10 @@
 \usepackage{amssymb}
 \usepackage{graphicx}
 \usepackage{color}
+\usepackage{enumitem}
+\usepackage[margin=0.5in]{geometry}
+\usepackage{karnaugh-map}
+
 
 \title{MATH 318, Assignment 3}
 \author{Kyle Rubenok, 260667187}
@@ -63,5 +67,62 @@
                     \newline 
                     \includegraphics{2b.png}
             \end{enumerate}
+        \item
+            \begin{enumerate}
+                \item DNF
+                $$p \lor r$$
+                \item CNF
+                $$p \lor r$$
+            \end{enumerate}
+        \item
+            \begin{enumerate}[label=\arabic*)]
+                \item $p \rightarrow q$ with only NAND
+                \newline
+                \begin{tabular}{@{ }c@{ }@{ }c | c@{ }@{}c@{}@{}c@{}@{ }c@{ }@{ }c@{ }@{ }c@{ }@{}c@{}@{ }c@{ }@{ }c@{ }@{}c@{}@{ }c@{ }@{}c@{}@{ }c@{ }@{ }c@{ }@{ }c@{ }@{}c@{}@{ }c}
+                    p & q &  & ( & ( & p & $NAND$ & q & ) & $NAND$ & p & ) & $\leftrightarrow$ & ( & p & $\rightarrow$ & q & ) & \\
+                    \hline 
+                    T & T &  &  &  & T & F & T &  & T & T &  & \textcolor{red}{T} &  & T & T & T &  & \\
+                    T & F &  &  &  & T & T & F &  & F & T &  & \textcolor{red}{T} &  & T & F & F &  & \\
+                    F & T &  &  &  & F & T & T &  & T & F &  & \textcolor{red}{T} &  & F & T & T &  & \\
+                    F & F &  &  &  & F & T & F &  & T & F &  & \textcolor{red}{T} &  & F & T & F &  & \\
+                    \end{tabular}
+                \item $(p \land q)\lor \neg p$ with only NOR
+                \newline
+                \begin{tabular}{@{ }c@{ }@{ }c | c@{ }@{}c@{}@{}c@{}@{}c@{}@{ }c@{ }@{ }c@{ }@{ }c@{ }@{}c@{}@{ }c@{ }@{ }c@{ }@{}c@{}@{ }c@{ }@{}c@{}@{}c@{}@{ }c@{ }@{ }c@{ }@{ }c@{ }@{}c@{}@{ }c@{ }@{ }c@{ }@{}c@{}@{}c@{}@{ }c@{ }@{}c@{}@{}c@{}@{ }c@{ }@{ }c@{ }@{ }c@{ }@{}c@{}@{ }c@{ }@{ }c@{ }@{ }c@{ }@{}c@{}@{ }c}
+                    p & q &  & ( & ( & ( & p & $NOR$ & p & ) & $NOR$ & q & ) & $NOR$ & ( & ( & p & $NOR$ & p & ) & $NOR$ & q & ) & ) & $\leftrightarrow$ & ( & ( & p & $\land$ & q & ) & $\lor$ & $\neg$ & p & ) & \\
+                    \hline 
+                    T & T &  &  &  &  & T & F & T &  & F & T &  & T &  &  & T & F & T &  & F & T &  &  & \textcolor{red}{T} &  &  & T & T & T &  & T & F & T &  & \\
+                    T & F &  &  &  &  & T & F & T &  & T & F &  & F &  &  & T & F & T &  & T & F &  &  & \textcolor{red}{T} &  &  & T & F & F &  & F & F & T &  & \\
+                    F & T &  &  &  &  & F & T & F &  & F & T &  & T &  &  & F & T & F &  & F & T &  &  & \textcolor{red}{T} &  &  & F & F & T &  & T & T & F &  & \\
+                    F & F &  &  &  &  & F & T & F &  & F & F &  & T &  &  & F & T & F &  & F & F &  &  & \textcolor{red}{T} &  &  & F & F & F &  & T & T & F &  & \\
+                    \end{tabular}
+            \end{enumerate}
+        \item The formula is even when $n \geq 2$ and n is an even number. We will proove this by induction on n. 
+        \newline
+        % \item BOLD THE HEADERS> 
+        \textbf{Base Case:} take n = 2. This follows from the truth table. 
+        \newline
+        \begin{tabular}{@{ }c | c@{ }@{ }c@{ }@{ }c@{ }@{ }c@{ }@{ }c}
+            p &  & p & $\rightarrow$ & p & \\
+            \hline 
+            T &  & T & \textcolor{red}{T} & T & \\
+            F &  & F & \textcolor{red}{T} & F & \\
+            \end{tabular}
+        \newline
+        \textbf{Induction Step:} Taking that this holds for any other n, we will show that it holds for $n+2$. Since we can assume that any formula with an even n number of p's, we need to show that $(T \rightarrow p) \rightarrow p$ is also true. This clearly follows from the truth table.
+        \item
+        \item
+            Drawing the karnaugh map as follows:
+            \newline
+            \begin{karnaugh-map}[4][4][1][$rs$][$pq$]
+                \maxterms{6,7,15,14}
+                \minterms{0,1,2,3,4,5,8,9,10,11,12,13}
+                \implicant{0}{2}
+                \implicant{0}{9}
+                \implicant{8}{10}
+            \end{karnaugh-map}
+            \newline
+            Giving the following: $f = \neg r \lor (\neg p \land \neg q)\lor (p\land \neg q)$
+        \item Take for example the formula $p \lor \neg p$. If we attempt to replicate this with the set $\{\oplus\}$. Considering the operations available, it's clear that outside of the identity function of $p = T$ any formulas constructed with combinations of $p$ and $\oplus$ such as $p \oplus p$ and so on will be logically false. This makes replicating the formula $p \lor \neg p$ and many others impossible. Thus $\{\oplus\}$ is not functionally complete. 
     \end{enumerate}
 \end{document}
