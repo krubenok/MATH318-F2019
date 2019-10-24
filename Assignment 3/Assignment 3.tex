@@ -109,8 +109,15 @@
             F &  & F & \textcolor{red}{T} & F & \\
             \end{tabular}
         \newline
-        \textbf{Induction Step:} Taking that this holds for any other n, we will show that it holds for $n+2$. Since we can assume that any formula with an even n number of p's, we need to show that $(T \rightarrow p) \rightarrow p$ is also true. This clearly follows from the truth table.
-        \item
+        \textbf{Induction Step:} Taking that this holds for any other $n$, we will show that it holds for $n+2$. Since we can assume that any formula with an even $n$ number of $p$'s, we need to show that $(T \rightarrow p) \rightarrow p$ is also true. This clearly follows from the truth table.
+        \item \textbf{$\leftarrow$} Assuming that every variable in $\varphi$ occurs $n$ times, where $n$ is an even number. Once again, take that each $\varphi_i$ also appear exactly $m$ times, where $m$ is also an even number. All instances of $\varphi_i$ may be grouped in pairs connected by a $\leftrightarrow$ in the following manner:
+        $$(\varphi_1 \leftrightarrow \varphi_1 )\leftrightarrow (\varphi_2 \leftrightarrow \varphi_2 )\leftrightarrow [....](\varphi_n \leftrightarrow \varphi_n )$$
+        This would require that any individual $(\varphi_i \leftrightarrow \varphi_i )$ is a tautology making the entire construction a tautology as well. 
+        \textbf{$\rightarrow$} Let $\varphi$ be a tautology. 
+        \newline
+        We can write a formula of the binconditional equivalence of $\varphi_i$ where $0\leq i\leq n$ and each $\varphi_i$ is a variable or a negation or a variable. If we assume that at least one of the $\varphi_i$ appears an odd number of times, let's assume it's $\varphi_j$. Taking the same formula contruction as above but appending the following:
+        $$(\varphi_1 \leftrightarrow \varphi_1 )\leftrightarrow (\varphi_2 \leftrightarrow \varphi_2 )\leftrightarrow [....](\varphi_n \leftrightarrow \varphi_n )\leftrightarrow \varphi_j $$
+        The created a contradiction as the formula is no longer a tautology requiring that should $\varphi$ be a tautology, it must contain an even number of $\varphi_i$.
         \item
             Drawing the karnaugh map as follows:
             \newline
