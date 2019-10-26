@@ -21,11 +21,9 @@ jobs:
           working_directory: "./Assignment 4"
           root_file: "Assignment 4.tex"
           extra_packages: "enumitem xstring"
-      - name: Release
-        uses: softprops/action-gh-release@v1
-        with:
-          files: |
-            "Assignment 3/Assignment 3.pdf"
-            "Assignment 4/Assignment 4.pdf"
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Create Release
+        uses: ncipollo/release-action@v1
+        with: 
+          artifacts: "*/*.pdf"
+          artifactContentType: pdf
+          token: ${{ secrets.GITHUB_TOKEN }}
