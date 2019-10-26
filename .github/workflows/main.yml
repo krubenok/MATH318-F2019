@@ -12,22 +12,21 @@ jobs:
       - name: Compile Assignment 3
         uses: xu-cheng/latex-action@master
         with:
-          working_directory: "./Assignment 3"
-          root_file: "Assignment 3.tex"
+          working_directory: "./Assignment_3"
+          root_file: "Assignment_3.tex"
           extra_packages: "karnaugh-map enumitem xstring"
       - name: Compile Assignment 4
         uses: xu-cheng/latex-action@master
         with:
-          working_directory: "./Assignment 4"
-          root_file: "Assignment 4.tex"
+          working_directory: "./Assignment_4"
+          root_file: "Assignment_4.tex"
           extra_packages: "enumitem xstring"
       - name: Create Release
         uses: meeDamian/github-release@1.0
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           allow_override: true
-          gzip: folders
           tag: latest
           files: >
-            "Assignment 3/Assignment 3.pdf"
-            "Assignment 4/Assignment 4.pdf"
+            Assignment_3/Assignment_3.pdf
+            Assignment_4/Assignment_4.pdf
