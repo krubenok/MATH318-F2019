@@ -25,7 +25,8 @@ jobs:
         uses: meeDamian/github-release@1.0
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
-          tag: v1.0.0
+          allow_override: true
+          tag: latest
           files: >
             Assignment_3/Assignment_3.pdf
             Assignment_4/Assignment_4.pdf
