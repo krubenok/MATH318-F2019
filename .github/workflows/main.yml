@@ -21,10 +21,11 @@ jobs:
           working_directory: "./Assignment_4"
           root_file: "Assignment_4.tex"
           extra_packages: "enumitem xstring"
-      - name: Create Release
+      - name: Set enviroment for github-release
         run: |
           dt=$(date '+%d/%m/%Y %H:%M:%S')
-          echo "$dt"
+          echo ::set-env name=RELEASE_TAG::"$dt"
+      - name: Create Release
         uses: meeDamian/github-release@1.0
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
