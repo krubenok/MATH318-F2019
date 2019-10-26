@@ -6,8 +6,15 @@ jobs:
     steps:
       - name: Set up Git repository
         uses: actions/checkout@v1
-      - name: Compile LaTeX document
-        uses: dante-ev/latex-action@master
+      - name: Compile Assignment 3
+        uses: xu-cheng/latex-action@master
         with:
-          root_file: "Assignment 3/Assignment 3.tex"
+          working_directory: "./Assignment 3"
+          root_file: "Assignment 3.tex"
           extra_packages: "karnaugh-map enumitem xstring"
+      - name: Compile Assignment 4
+        uses: xu-cheng/latex-action@master
+        with:
+          working_directory: "./Assignment 4"
+          root_file: "Assignment 4.tex"
+          extra_packages: "enumitem xstring"
