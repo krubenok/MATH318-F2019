@@ -1,5 +1,8 @@
-name: Build LaTeX document
-on: [push]
+name: Build LaTeX documents
+on:
+  push:
+    branches:
+      - master
 jobs:
   build_latex:
     runs-on: ubuntu-latest
@@ -18,3 +21,11 @@ jobs:
           working_directory: "./Assignment 4"
           root_file: "Assignment 4.tex"
           extra_packages: "enumitem xstring"
+      - name: Release
+        uses: softprops/action-gh-release@v1
+        with:
+          files: |
+            "Assignment 3/Assignment 3.pdf"
+            "Assignment 4/Assignment 4.pdf"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
