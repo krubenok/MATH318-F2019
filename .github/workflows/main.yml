@@ -30,8 +30,8 @@ jobs:
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           allow_override: true
-          gzip: folders
+          gzip: false
           tag: $dt
           files: >
-            "./Assignment_3/Assignment_3.pdf"
-            "./Assignment_4/Assignment_4.pdf"
+            "Assignment_3/Assignment_3.pdf"
+            "Assignment_4/Assignment_4.pdf"
