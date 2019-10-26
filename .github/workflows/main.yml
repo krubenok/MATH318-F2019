@@ -22,8 +22,10 @@ jobs:
           root_file: "Assignment 4.tex"
           extra_packages: "enumitem xstring"
       - name: Create Release
-        uses: ncipollo/release-action@v1
-        with: 
-          artifacts: "*/*.pdf"
-          artifactContentType: pdf
+        uses: meeDamian/github-release@0.1
+        with:
           token: ${{ secrets.GITHUB_TOKEN }}
+          tag: v1.0.0
+          files: >
+            "Assignment 3/Assignment 3.pdf"
+            "Assignment 4/Assignment 4.pdf"
