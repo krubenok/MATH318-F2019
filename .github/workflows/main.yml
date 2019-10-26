@@ -24,7 +24,7 @@ jobs:
       - name: Create Release
         uses: meeDamian/github-release@1.0
         run: |
-        dt=$(date '+%d/%m/%Y %H:%M:%S');
+        dt=$(date '+%d/%m/%Y %H:%M:%S')
         echo "$dt"
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
