@@ -22,7 +22,7 @@ jobs:
           root_file: "Assignment 4.tex"
           extra_packages: "enumitem xstring"
       - name: Create Release
-        uses: meeDamian/github-release@0.1
+        uses: meeDamian/github-release@1.0.1
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           tag: v1.0.0
