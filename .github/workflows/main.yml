@@ -24,7 +24,10 @@ jobs:
       - name: Set enviroment for github-release
         run: |
           dt=$(date '+%d/%m/%Y %H:%M:%S')
-          echo ::set-env name=RELEASE_TAG::${dt}
+          echo $dt
+          export RELEASE_TAG=$dt
+          echo RELEASE_TAG
+          # echo ::set-env name=RELEASE_TAG::${dt}
       - name: Create Release
         uses: meeDamian/github-release@1.0
         with:
