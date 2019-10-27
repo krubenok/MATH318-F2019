@@ -23,7 +23,7 @@ jobs:
           extra_packages: "enumitem xstring"
       - name: Set enviroment for github-release
         run: |
-          dt=$(date '+%d/%m/%Y %H:%M:%S')
+          dt=$(date '+%d.%m.%Y %H.%M.%S')
           echo $dt
           echo ::set-env name=RELEASE_TAG::$dt
       - name: Create Release
