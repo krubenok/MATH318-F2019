@@ -34,7 +34,6 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
           allow_override: true
           gzip: false
-          tag: $dt
           files: >
             Assignment_3/Assignment_3.pdf
             Assignment_4/Assignment_4.pdf
