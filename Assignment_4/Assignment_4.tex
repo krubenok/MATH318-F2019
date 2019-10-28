@@ -33,7 +33,10 @@
                 \item Take $B = \mathcal{P}$. Each of the atoms in B makeup the singleton set with every non-empty set in B containing a singleton. This means that for every nonzero $b \in B$, there is an atom $a \in B$ with $ a \leq b$. 
                 \item Yes, take B as any boolean algebra without atoms. Additionally let B' be the algebra 2. From this, $B \times B'$ has exactly one atom, $(0,1)$.
             \end{enumerate}
-        \item Question 3
+        \item The reflexivity of $equiv$ and $\preceq$ follow from each other and $\equiv$ is symmetrical by definition.  Now to show that $\equiv$ is transitive, we suppose that $x\equiv y$ and $y \equiv to z$ giving the following:
+        $$x \preceq y \preceq z$$
+        $$z \preceq y \preceq x$$
+        Giving that $x \preceq z$ and $z\preceq x$ In order to show that $ \leq $ is a partial order it needs to be shown as antisymmetric. Suppose first that $[x]_{\equiv} \leq [y]_{\equiv}$ and $[y]_{\equiv} \leq [x]_{\equiv}$. This gives that $x \preceq y$ and that $y \preceq x$ showing that $x \equiv y$ and $[x]_{\equiv} = [y]_{\equiv}$. We can show that $\leq$ is relfexive and transitive in the same way that it was shown for $\equiv$
         \item  
             \begin{enumerate}[label=\arabic*)]
                 \item To show that $|$ is a partial order on $\mathds{N}$ we must show that it is transitive. We know that it is reflexive since $n=1 \cdot n$ so $n|n$. Next, suppose that $n|m$ and $m|n$. For some $i$ and $j$, we can then see that $m=in$ and $n=jm$ giving that $ m = in = ijm$. If m = 0, $n=j \cdot 0 = 0$ and $n=m$. Alternatively, $ij = 1$ and $i = j = 1$ giving that $n = 1 \cdot m = m$ showing it is antisymmetric. Now, if $n|m$ and $m | k$ then $m = in$ and $k = jm$ for some $i$ $j$ therefore $k = jm = ijn$. Giving that $n|p$ is transitive and a partial order. 
@@ -44,6 +47,6 @@
         \item One potential solution
         $$\o \textless \{1\}\textless \{2\}\textless \{3\}\textless \{1,2\}\textless \{1,3\}\textless \{2,3\}\textless \{1,2,3\} $$
         \item Take $B \in mathcal{P}(\mathds{N})$ with the property that $B \subset \{1,2\}$ and $B \subset \{1,3\}$. This gives that $B \subset (\{1,2\} \cap \{1,3\})$ This means that $B \subset \{1\}$ and that $B \notin P$. Since $\{1,2\}$ and $\{1,3\}$ are in $P$ without a lower bound in $P$, $P$ also does not have a lower bound. 
-        \item 
+        \item Take the claim that the least fixed point $A = \{(01)^n : n\geq 0\}$. $A$ is a fixed point since $f(A) = A \cup \{w01 : q \in A\} \cup \{\epsilon \} = A \cup \{(01)^n : n\geq 1\}\cup \{\epsilon \}=A$. Allow $B$ to be a fixed point in $f$, we will show by induction that for $(01)^n \in B$ for all $n\geq 0$. Foe the base case of $n=0$, we have $\epsilon \in f(B) = B$. Taking the induction hypothesis that $(01)^n \in B$ holds, we have that $(01)^{n+1} = 01(01)^n \in f(B)=B$. Therefor our claim holds: $A\subset C$ and A is the least fixed point of $f$
     \end{enumerate}
 \end{document}
