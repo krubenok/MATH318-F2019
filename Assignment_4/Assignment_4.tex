@@ -6,6 +6,7 @@
 \usepackage{enumitem}
 \usepackage[margin=0.5in]{geometry}
 \usepackage{tabto}
+\usepackage{dsfont}
 
 
 \title{MATH 318, Assignment 4}
@@ -32,6 +33,13 @@
                 \item Take $B = \mathcal{P}$. Each of the atoms in B makeup the singleton set with every non-empty set in B containing a singleton. This means that for every nonzero $b \in B$, there is an atom $a \in B$ with $ a \leq b$. 
                 \item Yes, take B as any boolean algebra without atoms. Additionally let B' be the algebra 2. From this, $B \times B'$ has exactly one atom, $(0,1)$.
             \end{enumerate}
-        \item 
+        \item Question 3
+        \item  
+            \begin{enumerate}[label=\arabic*)]
+                \item To show that $|$ is a partial order on $\mathds{N}$ we must show that it is transitive. We know that it is reflexive since $n=1 \cdot n$ so $n|n$. Next, suppose that $n|m$ and $m|n$. For some $i$ and $j$, we can then see that $m=in$ and $n=jm$ giving that $ m = in = ijm$. If m = 0, $n=j \cdot 0 = 0$ and $n=m$. Alternatively, $ij = 1$ and $i = j = 1$ giving that $n = 1 \cdot m = m$ showing it is antisymmetric. Now, if $n|m$ and $m | k$ then $m = in$ and $k = jm$ for some $i$ $j$ therefore $k = jm = ijn$. Giving that $n|p$ is transitive and a partial order. 
+                \item We have that $ n = n \cdot 1$ for any n, therefore $1|n$ and 1 a least element.
+                \item We have that $ 0 = 0 \cdot n$ for any n, therefore $n|0$ and 0 a greatest element.
+            \end{enumerate}
+        \item We need two chains to cover P since P is not itself a chain ($2\nmid 3$ and $3\nmid 2$). Allow $C_1 = \{1,3\}$ and $C_2 = \{2,4\}$. Both $C_1$ and $C_2$ are chains and $P=C_1\cup C_2$. This means the smallest number of chains that covers P is 2. 
     \end{enumerate}
 \end{document}
