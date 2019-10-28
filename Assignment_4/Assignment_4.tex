@@ -5,6 +5,8 @@
 \usepackage{color}
 \usepackage{enumitem}
 \usepackage[margin=0.5in]{geometry}
+\usepackage{tabto}
+\usepackage{dsfont}
 
 
 \title{MATH 318, Assignment 4}
@@ -16,7 +18,35 @@
 \maketitle
 
     \begin{enumerate}
-        \item The set $\{\lor , \land \}$ is not functionally complete. We can prove this by showing it is not 1-complete. Take the $\neg$ operator. Regardless of what input we give to any combination of $\{\lor , \land \}$, ${T \land T \leftrightarrow T}$ and ${F \land F \leftrightarrow F}$. There is no way to invert the input and achieve equivalence to $\neg$
-        \item Take for example the formula $p \lor \neg p$. If we attempt to replicate this with the set $\{\oplus\}$. Considering the operations available, it's clear that outside of the identity function of $p = T$ any formulas constructed with combinations of $p$ and $\oplus$ such as $p \oplus p$ and so on will be logically false. This makes replicating the formula $p \lor \neg p$ and many others impossible. Thus $\{\oplus\}$ is not functionally complete. 
+        \item 
+            \begin{enumerate}[label=\arabic*)] 
+                \item The atoms of B are as follows: 
+                    \newline 
+                    $p \wedge q \wedge r$ \tab $p \wedge q \wedge \neg r$ \newline
+                    $\neg p \wedge \neg q \wedge r$ \tab $\neg p \wedge \neg q \wedge \neg r$ \newline
+                    $p \wedge \neg q \wedge r$ \tab $p \wedge \neg q \wedge \neg r$ \newline
+                    $\neg p \wedge q \wedge r$ \tab $\neg p \wedge q \wedge \neg r$ \newline
+                \item From the 8 atoms above, we have that there are $2^8$ elements in B. 
+            \end{enumerate}
+        \item
+            \begin{enumerate}[label=\arabic*)]
+                \item Take $B = \mathcal{P}$. Each of the atoms in B makeup the singleton set with every non-empty set in B containing a singleton. This means that for every nonzero $b \in B$, there is an atom $a \in B$ with $ a \leq b$. 
+                \item Yes, take B as any boolean algebra without atoms. Additionally let B' be the algebra 2. From this, $B \times B'$ has exactly one atom, $(0,1)$.
+            \end{enumerate}
+        \item The reflexivity of $equiv$ and $\preceq$ follow from each other and $\equiv$ is symmetrical by definition.  Now to show that $\equiv$ is transitive, we suppose that $x\equiv y$ and $y \equiv to z$ giving the following:
+        $$x \preceq y \preceq z$$
+        $$z \preceq y \preceq x$$
+        Giving that $x \preceq z$ and $z\preceq x$ In order to show that $ \leq $ is a partial order it needs to be shown as antisymmetric. Suppose first that $[x]_{\equiv} \leq [y]_{\equiv}$ and $[y]_{\equiv} \leq [x]_{\equiv}$. This gives that $x \preceq y$ and that $y \preceq x$ showing that $x \equiv y$ and $[x]_{\equiv} = [y]_{\equiv}$. We can show that $\leq$ is relfexive and transitive in the same way that it was shown for $\equiv$
+        \item  
+            \begin{enumerate}[label=\arabic*)]
+                \item To show that $|$ is a partial order on $\mathds{N}$ we must show that it is transitive. We know that it is reflexive since $n=1 \cdot n$ so $n|n$. Next, suppose that $n|m$ and $m|n$. For some $i$ and $j$, we can then see that $m=in$ and $n=jm$ giving that $ m = in = ijm$. If m = 0, $n=j \cdot 0 = 0$ and $n=m$. Alternatively, $ij = 1$ and $i = j = 1$ giving that $n = 1 \cdot m = m$ showing it is antisymmetric. Now, if $n|m$ and $m | k$ then $m = in$ and $k = jm$ for some $i$ $j$ therefore $k = jm = ijn$. Giving that $n|p$ is transitive and a partial order. 
+                \item We have that $ n = n \cdot 1$ for any n, therefore $1|n$ and 1 a least element.
+                \item We have that $ 0 = 0 \cdot n$ for any n, therefore $n|0$ and 0 a greatest element.
+            \end{enumerate}
+        \item We need two chains to cover P since P is not itself a chain ($2\nmid 3$ and $3\nmid 2$). Allow $C_1 = \{1,3\}$ and $C_2 = \{2,4\}$. Both $C_1$ and $C_2$ are chains and $P=C_1\cup C_2$. This means the smallest number of chains that covers P is 2. 
+        \item One potential solution
+        $$\o \textless \{1\}\textless \{2\}\textless \{3\}\textless \{1,2\}\textless \{1,3\}\textless \{2,3\}\textless \{1,2,3\} $$
+        \item Take $B \in mathcal{P}(\mathds{N})$ with the property that $B \subset \{1,2\}$ and $B \subset \{1,3\}$. This gives that $B \subset (\{1,2\} \cap \{1,3\})$ This means that $B \subset \{1\}$ and that $B \notin P$. Since $\{1,2\}$ and $\{1,3\}$ are in $P$ without a lower bound in $P$, $P$ also does not have a lower bound. 
+        \item Take the claim that the least fixed point $A = \{(01)^n : n\geq 0\}$. $A$ is a fixed point since $f(A) = A \cup \{w01 : q \in A\} \cup \{\epsilon \} = A \cup \{(01)^n : n\geq 1\}\cup \{\epsilon \}=A$. Allow $B$ to be a fixed point in $f$, we will show by induction that for $(01)^n \in B$ for all $n\geq 0$. Foe the base case of $n=0$, we have $\epsilon \in f(B) = B$. Taking the induction hypothesis that $(01)^n \in B$ holds, we have that $(01)^{n+1} = 01(01)^n \in f(B)=B$. Therefor our claim holds: $A\subset C$ and A is the least fixed point of $f$
     \end{enumerate}
 \end{document}
