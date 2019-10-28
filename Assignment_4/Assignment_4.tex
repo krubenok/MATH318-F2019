@@ -5,6 +5,7 @@
 \usepackage{color}
 \usepackage{enumitem}
 \usepackage[margin=0.5in]{geometry}
+\usepackage{tabto}
 
 
 \title{MATH 318, Assignment 4}
@@ -16,7 +17,21 @@
 \maketitle
 
     \begin{enumerate}
-        \item The set $\{\lor , \land \}$ is not functionally complete. We can prove this by showing it is not 1-complete. Take the $\neg$ operator. Regardless of what input we give to any combination of $\{\lor , \land \}$, ${T \land T \leftrightarrow T}$ and ${F \land F \leftrightarrow F}$. There is no way to invert the input and achieve equivalence to $\neg$
-        \item Take for example the formula $p \lor \neg p$. If we attempt to replicate this with the set $\{\oplus\}$. Considering the operations available, it's clear that outside of the identity function of $p = T$ any formulas constructed with combinations of $p$ and $\oplus$ such as $p \oplus p$ and so on will be logically false. This makes replicating the formula $p \lor \neg p$ and many others impossible. Thus $\{\oplus\}$ is not functionally complete. 
+        \item 
+            \begin{enumerate}[label=\arabic*)] 
+                \item The atoms of B are as follows: 
+                    \newline 
+                    $p \wedge q \wedge r$ \tab $p \wedge q \wedge \neg r$ \newline
+                    $\neg p \wedge \neg q \wedge r$ \tab $\neg p \wedge \neg q \wedge \neg r$ \newline
+                    $p \wedge \neg q \wedge r$ \tab $p \wedge \neg q \wedge \neg r$ \newline
+                    $\neg p \wedge q \wedge r$ \tab $\neg p \wedge q \wedge \neg r$ \newline
+                \item From the 8 atoms above, we have that there are $2^8$ elements in B. 
+            \end{enumerate}
+        \item
+            \begin{enumerate}[label=\arabic*)]
+                \item Take $B = \mathcal{P}$. Each of the atoms in B makeup the singleton set with every non-empty set in B containing a singleton. This means that for every nonzero $b \in B$, there is an atom $a \in B$ with $ a \leq b$. 
+                \item Yes, take B as any boolean algebra without atoms. Additionally let B' be the algebra 2. From this, $B \times B'$ has exactly one atom, $(0,1)$.
+            \end{enumerate}
+        \item 
     \end{enumerate}
 \end{document}
