@@ -21,6 +21,12 @@ jobs:
           working_directory: "./Assignment_4"
           root_file: "Assignment_4.tex"
           extra_packages: "enumitem xstring"
+      - name: Compile Assignment 5
+        uses: xu-cheng/latex-action@master
+        with:
+          working_directory: "./Assignment_5"
+          root_file: "Assignment_5.tex"
+          extra_packages: "enumitem xstring"
       - name: Set enviroment for github-release
         run: |
           dt=$(date '+%Y.%m.%d-%H.%M.%S')
@@ -35,3 +41,4 @@ jobs:
           files: >
             Assignment_3/Assignment_3.pdf
             Assignment_4/Assignment_4.pdf
+            Assignment_5/Assignment_5.pdf
